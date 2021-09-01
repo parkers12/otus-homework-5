@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Homework-5 Weather forecast</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="input">Погода</div>
+      <div class="form">
+        <input
+          id="input"
+          class="input"
+          type="text"
+          name="city"
+          placeholder="Введите город"
+          required
+          autofocus
+        />
+        <input
+          id="button"
+          class="button"
+          type="submit"
+          name="submit"
+          value="Узнать погоду"
+        />
+      </div>
+      <div id="weather" class="weather">
+        <div>Город</div>
+        <div>Карта</div>
+      </div>
+      <div id="cityList" class="cityList">Список просмотренных городов</div>
+    </div>
+  </body>
+</html>
