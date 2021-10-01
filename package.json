@@ -23,10 +23,12 @@
   },
   "homepage": "https://github.com/parkers12/otus-homework-5#readme",
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.9",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
     "@types/jest": "^26.0.24",
     "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -37,7 +39,7 @@
     "jest": "^27.0.6",
     "lint-staged": "^11.1.1",
     "prettier": "2.3.2",
-    "webpack": "^5.54.0",
+    "webpack": "^5.56.0",
     "webpack-cli": "^4.8.0"
   },
   "lint-staged": {
