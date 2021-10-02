@@ -10,6 +10,14 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["jest"],
+  settings: {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+  },
   rules: {
     "max-len": [
       "error",
@@ -20,5 +28,15 @@ module.exports = {
     "no-console": "off",
     "no-alert": "off",
     "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "always",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
   },
 };
