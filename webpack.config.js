@@ -11,6 +11,7 @@ module.exports = {
     environment: {
       arrowFunction: false,
     },
+    assetModuleFilename: "img/[name][ext]",
   },
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   plugins: [
@@ -35,7 +36,7 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
