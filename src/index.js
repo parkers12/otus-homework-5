@@ -1,9 +1,10 @@
 import "./styles/styles.css";
-import markup from "./js/markup.js";
-import { handleClick, getCurrentLocation } from "./js/functions.js";
+import markup from "./js/markup";
+import { handleClick, getCurrentLocation } from "./js/functions";
 
 function startFunction() {
-  markup();
+  const app = document.getElementById("app");
+  markup(app);
   getCurrentLocation();
   const button = document.getElementById("button");
   button.addEventListener("click", handleClick);

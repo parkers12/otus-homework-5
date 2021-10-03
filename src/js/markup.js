@@ -1,6 +1,6 @@
-export default function markup() {
+export default function markup(elem) {
   const wrapper = document.createElement("div");
-  document.body.appendChild(wrapper).setAttribute("class", "wrapper");
+  elem.appendChild(wrapper).setAttribute("class", "wrapper");
   const content = document.querySelector(".wrapper");
 
   const header = document.createElement("header");
