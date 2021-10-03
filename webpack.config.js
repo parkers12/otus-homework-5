@@ -16,7 +16,7 @@ module.exports = {
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Weather forecast",
+      title: "Weather in your city",
       template: "./index.html",
     }),
     new MiniCssExtractPlugin({
@@ -36,7 +36,7 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
