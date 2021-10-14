@@ -8,7 +8,6 @@
     "lint": "eslint . && prettier --check .",
     "lint:fix": "eslint . --fix && prettier --write .",
     "prepare": "husky install",
-    "pretty-check": "prettier -c 'src/**/*.ts'",
     "build": "webpack --node-env production",
     "dev": "webpack serve"
   },
@@ -21,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/parkers12/otus-homework-5/issues"
   },
-  "homepage": "https://github.com/parkers12/otus-homework-5#readme",
+  "homepage": "https://github.com/parkers12/otus-homework-5",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/plugin-transform-runtime": "^7.15.0",
