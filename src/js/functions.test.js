@@ -177,7 +177,7 @@ describe("handleClick", () => {
         expect(fetch).toHaveBeenCalledTimes(1);
       });
 
-      it("get temperature in cities", async () => {
+      it("return 404 temperature in cities", async () => {
         window.fetch = jest.fn(() =>
           Promise.resolve({
             json: () =>
