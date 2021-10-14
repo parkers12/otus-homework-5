@@ -18,6 +18,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Weather in your city",
       template: "./index.html",
+      favicon: "./src/favicon.ico",
     }),
     new MiniCssExtractPlugin({
       filename: "styles.css",
