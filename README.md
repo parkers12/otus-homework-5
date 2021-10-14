@@ -1,30 +1,32 @@
 # Погода в вашем городе
+
 ## Структура приложения
+
 - .github
-    - workflows
-        - deploy.yml
-        - sanity-check.yml
+  - workflows
+    - deploy.yml
+    - sanity-check.yml
 - .husky
-    - _
-        - .gitignore
-        - husky.sh
+  - \_
     - .gitignore
-    - pre-commit
+    - husky.sh
+  - .gitignore
+  - pre-commit
 - src
-    - img
-        - search.svg
-    - js
-        - functions.js
-		- functions.test.js
-		- getCurrentLocation.js
-		- getCurrentLocation.test.js
-        - markup.js
-		- markup.test.js
-    - styles
-        - reset.css
-        - styles.css
-    - favicon.ico
-    - index.js
+  - img
+    - search.svg
+  - js
+    - functions.js
+    - functions.test.js
+    - getCurrentLocation.js
+    - getCurrentLocation.test.js
+      - markup.js
+    - markup.test.js
+  - styles
+    - reset.css
+    - styles.css
+  - favicon.ico
+  - index.js
 - .eslintrc.js
 - .gitignore
 - .prettierignore
@@ -38,9 +40,11 @@
 - webpack.config.js
 
 ## Описание приложения
+
 Приложение отображает текущую погоду и местоположение пользователя на основе его геоданных. Так же пользователь может узнать погоду в любом другом городе, указав его название в поле поиска. Последние 10 запрошенных пользователем городов сохраняются в истории и отображаются на странице приложения. Пользователь может посмотреть погоду в сохраненных городах кликнув по их названию.
 
 ## Техническое описание работы приложения
+
 Приложение содержит стартовую страницу index.html. В ней содержится минимальная, необходимая html-разметка, а так же ссылки: на стартовый файл скрипта index.js и ссылку на сервис Гугла, который необходим для отображения положения пользователя на карте. При запуске приложения из файла index.js запускается функция startFunction, которая с помощью функции markup и файла markup.js добавляет на страницу index.html остальную html-разметку, необходимую для работы приложения. Далее запускается функция getCurrentLocation, которая располагается в файле functions.js. Файл index.js так же содержит два блока кода, которые запускают функцию handleClick по клику по иконке или по нажатию кнопки "Enter" на клавиатуре.
 
 Функция getCurrentLocation получает данные в формате json о местоположении пользователя с помощью сервиса http://ip-api.com/json/. После получения данных функция getCurrentLocation запускает поочередно еще две функции - getWeather и getLocalStorage. Первая - получает погоду, а вторая - историю запросов пользователя.
@@ -65,10 +69,13 @@
 Большая часть функций покрыта тестами с помощью Jest.
 
 # Weather in your city
+
 ## App Description
+
 The application displays the current weather and location of the user based on his geodata. The user can also find out the weather in any other city by entering its name in the search field. The last 10 cities requested by the user are saved in history and displayed on the application page. The user can see the weather in the saved cities by clicking on their name.
 
 ## Technical description of the application
+
 The application contains the start page index.html. It contains the minimum required html markup, as well as links: to the start script file index.js and a link to the Google service, which is required to display the user's position on the map. When the application is launched from the index.js file, the startFunction is launched, which, using the markup function and the markup.js file, adds the rest of the html markup necessary for the application to work on the index.html page. Next, the getCurrentLocation function is launched, which is located in the functions.js file. The index.js file also contains two blocks of code that trigger the handleClick function by clicking on the icon or by pressing the "Enter" key on the keyboard.
 
 The getCurrentLocation function receives data in json format about the user's location using the http://ip-api.com/json/ service. After receiving the data, the getCurrentLocation function runs in turn two more functions - getWeather and getLocalStorage. The first gets the weather, and the second gets the user's request history.
