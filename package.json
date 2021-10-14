@@ -1,7 +1,7 @@
 {
   "name": "homework",
   "version": "1.0.0",
-  "description": "'# otus-homework-5'",
+  "description": "'# otus-homework-5: Weather in your city'",
   "main": "index.js",
   "scripts": {
     "test": "jest",

@@ -104,7 +104,7 @@ export function getPressure(value) {
 export function getTimeStamp(value, timezone) {
   const date = new Date(value * 1000);
   const srtDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  return Date.parse(srtDay) / 1000 - timezone;
+  return Date.parse(srtDay) / 1000 - Number(timezone);
 }
 
 export function getDirectionWind(value) {
