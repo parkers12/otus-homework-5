@@ -23,6 +23,10 @@ module.exports = {
       template: path.resolve(__dirname, "./index.html"),
       filename: "index.html",
       favicon: "./src/img/favicon.ico",
+      meta: {
+        charset: { charset: "utf-8" },
+        viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      },
     }),
     new MiniCssExtractPlugin({
       filename: "./styles/styles.css",
