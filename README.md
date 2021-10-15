@@ -23,7 +23,7 @@
     - functions.test.js
     - getCurrentLocation.js
     - getCurrentLocation.test.js
-      - markup.js
+    - markup.js
     - markup.test.js
   - styles
     - reset.css
@@ -50,7 +50,7 @@
 
 Приложение содержит стартовую страницу index.html. В ней содержится минимальная, необходимая html-разметка, а так же ссылки: на стартовый файл скрипта index.js и ссылку на сервис Гугла, который необходим для отображения положения пользователя на карте. При запуске приложения из файла index.js запускается функция startFunction, которая с помощью функции markup и файла markup.js добавляет на страницу index.html остальную html-разметку, необходимую для работы приложения. Далее запускается функция getCurrentLocation, которая располагается в файле functions.js. Файл index.js так же содержит два блока кода, которые запускают функцию handleClick по клику по иконке или по нажатию кнопки "Enter" на клавиатуре.
 
-Функция getCurrentLocation получает данные в формате json о местоположении пользователя с помощью сервиса http://ip-api.com/json/. После получения данных функция getCurrentLocation запускает поочередно еще две функции - getWeather и getLocalStorage. Первая - получает погоду, а вторая - историю запросов пользователя.
+Функция getCurrentLocation получает данные в формате json о местоположении пользователя с помощью сервиса https://api.sypexgeo.net/. После получения данных функция getCurrentLocation запускает поочередно еще две функции - getWeather и getLocalStorage. Первая - получает погоду, а вторая - историю запросов пользователя.
 Функция getWeather с помощью вспомогательной функции getData формирует запрос, включающий введенный пользователем город. После того как ответ от сервера получен, функция его обрабатывает и на основе данных, формируется html-код содержащий показатели погоды. Так как некоторые данные, полученные от погодного сервера, поступают в формате неудобном (погода в кельвинах, время в миллисекундах) для зрительного восприятия, то в ходе работы функции getWeather подключаются еще несколько функций, а именно:
 
 - getDirectionWind - функция для конвертирования градусов в направление ветра;
@@ -81,7 +81,7 @@ The application displays the current weather and location of the user based on h
 
 The application contains the start page index.html. It contains the minimum required html markup, as well as links: to the start script file index.js and a link to the Google service, which is required to display the user's position on the map. When the application is launched from the index.js file, the startFunction is launched, which, using the markup function and the markup.js file, adds the rest of the html markup necessary for the application to work on the index.html page. Next, the getCurrentLocation function is launched, which is located in the functions.js file. The index.js file also contains two blocks of code that trigger the handleClick function by clicking on the icon or by pressing the "Enter" key on the keyboard.
 
-The getCurrentLocation function receives data in json format about the user's location using the http://ip-api.com/json/ service. After receiving the data, the getCurrentLocation function runs in turn two more functions - getWeather and getLocalStorage. The first gets the weather, and the second gets the user's request history.
+The getCurrentLocation function receives data in json format about the user's location using the https://api.sypexgeo.net/ service. After receiving the data, the getCurrentLocation function runs in turn two more functions - getWeather and getLocalStorage. The first gets the weather, and the second gets the user's request history.
 The getWeather function uses the getData helper function to form a request that includes the user-entered city. After the response from the server is received, the function processes it and based on the data, an html-code containing weather indicators is formed. Since some data received from the weather server comes in a format that is inconvenient (weather in Kelvin, time in milliseconds) for visual perception, several more functions are connected during the work of the getWeather function, namely:
 
 - getDirectionWind - function for converting degrees to wind direction;
