@@ -26,6 +26,10 @@ module.exports = {
       meta: {
         charset: { charset: "utf-8" },
         viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+        "Content-Security-Policy": {
+          "http-equiv": "X-UA-Compatible",
+          content: "ie=edge",
+        },
       },
     }),
     new MiniCssExtractPlugin({
