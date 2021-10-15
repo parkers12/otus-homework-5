@@ -5,22 +5,22 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    main: "./src/index.js",
   },
   output: {
-    filename: "./js/bundle.js",
-    path: path.resolve(__dirname, "./build"),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "build"),
     clean: true,
     environment: {
       arrowFunction: false,
     },
-    assetModuleFilename: "./img/[name][ext]",
+    assetModuleFilename: "img/[name][ext]",
   },
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   plugins: [
     new HtmlWebpackPlugin({
       title: "Weather in your city",
-      template: path.resolve(__dirname, "./index.html"),
+      template: "./index.html",
       filename: "index.html",
       favicon: "./src/img/favicon.ico",
       meta: {
@@ -33,7 +33,7 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: "./styles/styles.css",
+      filename: "styles/styles.css",
     }),
     new CleanWebpackPlugin(),
   ],
