@@ -10,7 +10,7 @@ describe("getCurrentLocation", () => {
   it("get user location", async () => {
     global.fetch = jest.fn(() =>
       Promise.resolve({
-        json: () => Promise.resolve({ city: "Moscow" }),
+        json: () => Promise.resolve({ city: { name_ru: "Moscow" } }),
       })
     );
     const city = await getCurrentLocation();
