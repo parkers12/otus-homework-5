@@ -5,10 +5,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
+    main: "src/index.js",
   },
   output: {
-    filename: "bundle.js",
+    filename: "js/bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
     environment: {
@@ -20,7 +20,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Weather in your city",
-      template: "./index.html",
+      template: "index.html",
       filename: "index.html",
       favicon: "./src/img/favicon.ico",
       meta: {
