@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    main: path.resolve(__dirname, "./src/index.js"),
+  },
   output: {
     filename: "./js/bundle.js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "./build"),
     clean: true,
     environment: {
       arrowFunction: false,
@@ -17,7 +19,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Weather in your city",
-      template: "./index.html",
+      template: path.resolve(__dirname, "./index.html"),
+      filename: "index.html",
       favicon: "./src/img/favicon.ico",
     }),
     new MiniCssExtractPlugin({
