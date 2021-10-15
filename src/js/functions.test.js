@@ -309,7 +309,7 @@ describe("handleClick", () => {
 
   describe("getTimeStamp", () => {
     it("timestamp start current day", () => {
-      const stamp = getTimeStamp(1634017006);
+      const stamp = getTimeStamp(1634017006, 0);
       expect(stamp).toBe(1633996800);
     });
   });

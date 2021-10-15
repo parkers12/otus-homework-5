@@ -101,12 +101,13 @@ export function getPressure(value) {
   return (value * 0.750064).toFixed(0);
 }
 
-export function getTimeStamp(value) {
+export function getTimeStamp(date1, timezone) {
   const x = new Date();
   const currentTimeZoneOffset = x.getTimezoneOffset() * 60;
+  const value = date1 + timezone + currentTimeZoneOffset;
   const date = new Date(value * 1000);
   const srtDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  return Date.parse(srtDay) / 1000 - currentTimeZoneOffset;
+  return Date.parse(srtDay) / 1000;
 }
 
 export function getDirectionWind(value) {
@@ -164,13 +165,17 @@ export async function getWeather(city) {
       document.getElementById("humidity").innerHTML = data.main.humidity;
       document.getElementById("sunrise").innerHTML = dateConvert(
         timeTranslater(
-          data.sys.sunrise - getTimeStamp(data.sys.sunrise),
+          data.sys.sunrise - getTimeStamp(data.sys.sunrise, data.timezone),
           3600,
           2
         )
       );
       document.getElementById("sunset").innerHTML = dateConvert(
-        timeTranslater(data.sys.sunset - getTimeStamp(data.sys.sunset), 3600, 2)
+        timeTranslater(
+          data.sys.sunset - getTimeStamp(data.sys.sunset, data.timezone),
+          3600,
+          2
+        )
       );
       document.getElementById("lengthDay").innerHTML = dateConvert(
         timeTranslater(data.sys.sunset - data.sys.sunrise, 3600, 2)
