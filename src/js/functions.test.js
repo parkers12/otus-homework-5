@@ -89,7 +89,7 @@ describe("handleClick", () => {
       const json = getData(city, false);
       const APIkey = "2f3499bf11f061c267af42038ae180bc";
       // eslint-disable-next-line max-len
-      const string = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIkey}`;
+      const string = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIkey}`;
       expect(json).toBe(string);
     });
 
