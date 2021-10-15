@@ -1,3 +1,6 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/350ec06eba528e4300f6/maintainability)](https://codeclimate.com/github/parkers12/otus-homework-5/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/350ec06eba528e4300f6/test_coverage)](https://codeclimate.com/github/parkers12/otus-homework-5/test_coverage)
+
 # Погода в вашем городе
 
 ## Структура приложения
