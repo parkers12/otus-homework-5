@@ -6,7 +6,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "./js/bundle.js",
-    path: path.resolve(__dirname, "/build"),
+    path: path.resolve(__dirname, "build"),
     clean: true,
     environment: {
       arrowFunction: false,
