@@ -8,17 +8,25 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="./js/googleMaps.js"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Y7wf4TCspmqw-ndjkh9yjWk1EW_Eubs&callback=initMap&v=weekly"
-      async
-      defer
-    ></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></>
     <![endif]-->
   </head>
   <body>
     <div id="app"></div>
+    <script type="text/javascript">
+      function initMap() {
+        // eslint-disable-next-line no-new
+        new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Y7wf4TCspmqw-ndjkh9yjWk1EW_Eubs&callback=initMap&v=weekly"
+      async
+      defer
+    ></script>
   </body>
 </html>
