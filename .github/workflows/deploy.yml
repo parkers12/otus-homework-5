@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install Packages
-        run: npm install
+        run: npm ci
       - name: Build page
         run: npm run build
         # https://github.com/marketplace/actions/deploy-to-github-pages
@@ -22,5 +22,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          publish_dir: ./dist # The folder the action should deploy.
+          publish_dir: dist # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
