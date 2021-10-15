@@ -1,6 +1,6 @@
 export async function getCurrentLocation() {
   try {
-    const response = await fetch("http://ip-api.com/json/");
+    const response = await fetch("https://ip-api.com/json/");
     const data = await response.json();
     return data.city;
   } catch (error) {

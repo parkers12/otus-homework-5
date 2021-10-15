@@ -26,7 +26,7 @@ export function getData(city, sourse) {
   } else {
     const APIkey = "2f3499bf11f061c267af42038ae180bc";
     // eslint-disable-next-line max-len
-    link = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIkey}`;
+    link = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIkey}`;
   }
   return link;
 }
@@ -141,7 +141,7 @@ export async function getWeather(city) {
     if (data.cod === 200) {
       document.getElementById("city").innerHTML = data.name;
       // eslint-disable-next-line max-len
-      const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       const cityBlock = document.getElementById("cityBlock");
       const icon = document.getElementById("icon");
       const styles = `background-image: url("${iconUrl}");`;
