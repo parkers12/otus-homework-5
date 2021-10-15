@@ -15,8 +15,6 @@ import {
   getLocalStorage,
   saveCity,
   handleClick,
-
-  // saveCity
 } from "./functions";
 
 describe("handleClick", () => {
