@@ -31,7 +31,7 @@ export function getData(city, sourse) {
   return link;
 }
 
-export function wrongCity(value) {
+export function handleCity(value) {
   const input = document.getElementById("input");
   const data = document.getElementById("data");
   if (value) {
@@ -184,7 +184,7 @@ export async function getWeather(city) {
       dataViewer("data", "flex");
       return true;
     }
-    wrongCity(true);
+    handleCity(true);
     dataViewer("data", "flex");
     return false;
   } catch (error) {
@@ -273,10 +273,10 @@ export async function getMapCity(value) {
         city = value;
       }
       getWeather(city);
-      wrongCity(false);
+      handleCity(false);
       saveCity(city);
     } else {
-      wrongCity(true);
+      handleCity(true);
     }
   } catch (error) {
     console.log(`Error: ${error.message}`);

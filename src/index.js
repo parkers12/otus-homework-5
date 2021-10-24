@@ -6,7 +6,7 @@ import {
   getLocalStorage,
   getMapCity,
   dataViewer,
-  wrongCity,
+  handleCity,
 } from "./js/functions";
 import { getCurrentLocation } from "./js/getCurrentLocation";
 
@@ -44,7 +44,7 @@ function startFunction() {
       dataViewer("data", "flex");
       city.textContent = input.value;
     } else {
-      wrongCity(true);
+      handleCity(true);
     }
   }
 

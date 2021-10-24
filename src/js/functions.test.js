@@ -4,7 +4,7 @@ import {
   getSign,
   dataViewer,
   getData,
-  wrongCity,
+  handleCity,
   getTemperature,
   dateConvert,
   timeTranslater,
@@ -101,13 +101,13 @@ describe("handleClick", () => {
     });
   });
 
-  describe("wrongCity", () => {
+  describe("handleCity", () => {
     const weather = document.getElementById("weather");
     const plugWeather = document.getElementById("plugWeather");
     const map = document.getElementById("map");
     const plugImage = document.getElementById("plugImage");
     it("component weather: incorrect city entered", () => {
-      wrongCity(false);
+      handleCity(false);
       const displayWeather = window
         .getComputedStyle(weather, null)
         .getPropertyValue("display");
@@ -118,7 +118,7 @@ describe("handleClick", () => {
       expect(displayPlug).toBe("none");
     });
     it("component weather: correct city entered", () => {
-      wrongCity(true);
+      handleCity(true);
       const displayWeather = window
         .getComputedStyle(weather, null)
         .getPropertyValue("display");
@@ -129,7 +129,7 @@ describe("handleClick", () => {
       expect(displayPlug).toBe("flex");
     });
     it("component map: incorrect city entered", () => {
-      wrongCity(false);
+      handleCity(false);
       const displayWeather = window
         .getComputedStyle(map, null)
         .getPropertyValue("display");
@@ -140,7 +140,7 @@ describe("handleClick", () => {
       expect(displayPlug).toBe("none");
     });
     it("component map: correct city entered", () => {
-      wrongCity(true);
+      handleCity(true);
       const displayWeather = window
         .getComputedStyle(map, null)
         .getPropertyValue("display");
