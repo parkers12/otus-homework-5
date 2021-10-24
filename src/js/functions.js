@@ -57,9 +57,13 @@ export async function getTemperature(city) {
   try {
     const url = getData(city, false);
     const response = await fetch(url);
+    console.log(response);
     if (response.ok) {
       const data = await response.json();
-      return getSign(data.main.temp.toFixed());
+      if (data.cod === 200) {
+        return getSign(data.main.temp.toFixed());
+      }
+      return "data not found";
     }
     return "data not found";
   } catch (error) {

@@ -162,6 +162,7 @@ describe("handleClick", () => {
       it("get temperature in cities", async () => {
         window.fetch = jest.fn(() =>
           Promise.resolve({
+            ok: true,
             json: () =>
               Promise.resolve({
                 city: "Moscow",
@@ -170,8 +171,8 @@ describe("handleClick", () => {
               }),
           })
         );
-        const temp = await getTemperature("Moscow");
-        expect(temp).toBe("+15");
+        const data = await getTemperature("Moscow");
+        expect(data).toEqual("+15");
         expect(fetch).toHaveBeenCalledTimes(1);
       });
 
@@ -194,8 +195,16 @@ describe("handleClick", () => {
             json: () => Promise.reject(new Error("something bad happened")),
           })
         );
-        const error = await getTemperature("Moscow");
-        expect(error).toBe(false);
+        const response = await getTemperature("Moscow");
+        expect(response).toBe("data not found");
+      });
+
+      it("get temperature return reject", async () => {
+        window.fetch = jest.fn(() =>
+          Promise.reject(new Error("something bad happened"))
+        );
+        const data = await getTemperature("Moscow");
+        expect(data).toBe(false);
       });
     });
 
@@ -246,7 +255,7 @@ describe("handleClick", () => {
           })
         );
         const error = await getTemperature("Moscow");
-        expect(error).toBe(false);
+        expect(error).toBe("data not found");
       });
     });
 
@@ -307,8 +316,14 @@ describe("handleClick", () => {
 
   describe("getTimeStamp", () => {
     it("timestamp start current day", () => {
+      class MockDate extends Date {
+        constructor() {
+          super(1634017006);
+        }
+      }
+      global.Date = MockDate;
       const stamp = getTimeStamp(1634017006, 0);
-      expect(stamp).toBe(1633996800);
+      expect(stamp).toBe(1634017);
     });
   });
 
