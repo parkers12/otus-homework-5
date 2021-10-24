@@ -226,7 +226,8 @@ function getWeatherCities(city, temp, id) {
   memory.style.display = "block";
 }
 
-export function getLocalStorage() {
+export async function getLocalStorage() {
+  await null;
   const localStor = localStorage.weatherForecast;
   if (typeof localStor === "undefined") {
     dataViewer("memory", "none");
