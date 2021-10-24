@@ -57,7 +57,6 @@ export async function getTemperature(city) {
   try {
     const url = getData(city, false);
     const response = await fetch(url);
-    console.log(response);
     if (response.ok) {
       const data = await response.json();
       if (data.cod === 200) {
@@ -200,13 +199,16 @@ export async function getWeather(city) {
 
 function getClicker() {
   setTimeout(() => {
-    const btns = document.querySelectorAll(".btn");
-    btns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        getWeather(e.target.innerText);
-      });
-    });
-  }, 2000);
+    const memory = document.getElementById("memory");
+    memory.onclick = function foo(e) {
+      const classElem = e.target.getAttribute("class");
+      if (classElem === "block") {
+        getWeather(e.target.getAttribute("id"));
+      } else {
+        getWeather(e.target.parentNode.getAttribute("id"));
+      }
+    };
+  }, 300);
 }
 
 function getWeatherCities(city, temp, id) {
